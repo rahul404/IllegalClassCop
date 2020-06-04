@@ -1,3 +1,3 @@
-module IllegalClassCop
+class IllegalClassCop
   VERSION = "0.1.0"
 end
