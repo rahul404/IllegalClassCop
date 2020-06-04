@@ -8,16 +8,12 @@ IllegalClassCop is a rake task that list all usage of class, modules and constan
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'illegal_class_cop'
+gem 'illegal_class_cop', github: 'rahul404/IllegalClassCop'
 ```
 
 And then execute:
 
     $ bundle install
-
-Or install it yourself as:
-
-    $ gem install illegal_class_cop
 
 ## Usage
 
