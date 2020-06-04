@@ -19,5 +19,5 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.add_dependency 'parser', '~> 2.7', '>= 2.7.1.3'
+  spec.add_dependency 'parser', '~> 2.5', '>= 2.5.0.3'
 end

@@ -1,7 +1,6 @@
 require "illegal_class_cop/version"
 require 'illegal_class_cop/realtie' if defined?(Rails)
 require 'parser/current'
-# require 'illegal_class_cop/illegal_class_access'
 
 class IllegalClassCop
   class ConstantMap
@@ -44,6 +43,7 @@ class IllegalClassCop
     end
 
     def print_offences(engine_names = nil)
+      raise StandardError.new("Not a rails app") if !defined?(Rails)
       puts "=========Scanning Project for illegal Constant Access\n"
       error_messages = []
       puts "=========Building Constant Map\n"
@@ -142,7 +142,8 @@ class IllegalClassCop
     def file_to_ast(file_path)
       file_content = File.read(file_path)
       parser = Parser::CurrentRuby.new
-      buffer = Parser::Source::Buffer.new('(string)', source: file_content)
+      buffer = Parser::Source::Buffer.new('(string)')
+      buffer.source = file_content
       parser.parse(buffer)
     end
 
